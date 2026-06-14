@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>K-Global — Navigateur nébuleux</title>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero" aria-labelledby="app-title">
+        <p class="eyebrow">Navigateur spatial</p>
+        <h1 id="app-title">K-Global</h1>
+        <p class="tagline">Cherche sur Google depuis une page d'accueil cosmique, puis reviens à K-Global en un clic.</p>
+
+        <form id="search-form" class="search-card" autocomplete="off">
+          <label class="sr-only" for="search-input">Recherche K-Global</label>
+          <input id="search-input" name="q" type="search" placeholder="Tape ta recherche..." required />
+          <button type="submit">Rechercher</button>
+        </form>
+
+        <div class="quick-actions" aria-label="Actions rapides">
+          <button class="ghost-button" id="lucky-button" type="button">Ouvrir directement dans Google</button>
+          <button class="ghost-button" id="clear-button" type="button">Effacer</button>
+        </div>
+      </section>
+
+      <section id="results-panel" class="results-panel" aria-live="polite" hidden>
+        <div class="results-heading">
+          <div>
+            <p class="eyebrow">Résultats préparés</p>
+            <h2 id="results-title">Sites trouvés</h2>
+          </div>
+          <a id="google-link" class="google-link" target="_blank" rel="noopener noreferrer">Voir la recherche Google</a>
+        </div>
+        <div id="results-list" class="results-list"></div>
+      </section>
+    </main>
+
+    <section id="google-mode" class="google-mode" hidden aria-label="Mode Google">
+      <div class="google-toolbar">
+        <strong>Mode Google</strong>
+        <span id="google-mode-query"></span>
+        <button id="exit-google" type="button">Sortir et revenir à K-Global</button>
+      </div>
+      <iframe id="google-frame" title="Google Search"></iframe>
+      <div class="frame-fallback">
+        Si Google bloque l'affichage intégré, utilise le bouton ci-dessous puis reviens à K-Global avec « Sortir ».
+        <a id="fallback-google-link" target="_blank" rel="noopener noreferrer">Ouvrir Google dans un onglet</a>
+      </div>
+    </section>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
