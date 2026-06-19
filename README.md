@@ -1,20 +1,18 @@
 # K-Global
 
-K-Global est un prototype de navigateur / moteur de recherche avec une ambiance nébuleuse.
+K-Global est une page d'accueil de navigateur avec une ambiance nébuleuse et une recherche qui envoie réellement l'utilisateur vers Google.
 
 ## Fonctionnement
 
-- La page d'accueil affiche une grande barre de recherche K-Global.
-- Quand une recherche est lancée, K-Global prépare des liens vers Google, Google Images, YouTube et d'autres services utiles.
-- Le bouton **Ouvrir directement dans Google** active un mode plein écran avec une barre **Sortir et revenir à K-Global**.
-- Les liens s'ouvrent dans Google ou dans le service externe, sans prétendre aspirer ou recopier automatiquement les résultats de Google.
-
-> Note : Google peut empêcher l'affichage intégré dans une iframe. Dans ce cas, K-Global propose un bouton pour ouvrir Google dans un nouvel onglet.
+- La barre de recherche lance une vraie requête vers `https://www.google.com/search`.
+- Par défaut, Google s'ouvre dans l'onglet courant pour donner l'impression d'un vrai départ vers Google.
+- L'option **Ouvrir Google dans un nouvel onglet** permet de garder K-Global ouvert pendant que Google s'ouvre à côté.
+- Les recherches rapides et l'historique local relancent aussi de vraies recherches Google.
+- Le retour à K-Global se fait avec le bouton retour du navigateur, ou en gardant K-Global ouvert grâce à l'option nouvel onglet.
 
 ## Développement
 
 ```bash
-npm install
 npm run start
 ```
 
@@ -23,3 +21,4 @@ npm run start
 ```bash
 npm run build
 ```
+index.html
